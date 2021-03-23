@@ -18,7 +18,7 @@ namespace nexuscrud.ActivityFunc
     {
         [FunctionName("UpdateActivity")]
         public static async Task<IActionResult> UpdateActivityFunc(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "Activity/{id}")] ActivityDTO req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "Activity/{id}")] ActivityDTO req,
             ILogger log, string id)
         {
 
