@@ -1,7 +1,6 @@
-# nexus-crud Azure Function - CosmosDB
+# raw-event-messaging Azure Function - CosmosDB
 
-This is .NET Core Azure Function for CosmosDB CRUD using Nexus library and Automapper.
-Also sending (and receiving) notification using Azure Event Hubs and Event Grid.
+This is .NET Core Azure Function (Http Trigger) &rarr; Event Grid &rarr; Azure Function (Event Grid Trigger) &rarr; Event Hub &rarr; Azure Function (Event Hub Trigger) write to CosmosDB
 
 ## Installation
 
@@ -13,6 +12,10 @@ Manage your Nuget Package and add Nexus Repository as Package Source.
 Install Nexus.Base.CosmosDBRepository to start using the library (this project using version 2020.11.9.1.).
 
 Install AutoMapper by Jimmy Bogard.
+
+Install Microsoft.Azure.WebJobs.Extensions.EventGrid.
+
+Install Microsoft.Azure.WebJobs.Extensions.EventHubs.
 
 ## Usage
 Add variable to local.settings.json
