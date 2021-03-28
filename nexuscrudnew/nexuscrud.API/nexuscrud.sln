@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nexuscrud.API", "nexuscrud.API.csproj", "{0EFC73B2-337F-4ADB-BC62-857C678C7B0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nexuscrud.BLL", "..\nexuscrud.BLL\nexuscrud.BLL.csproj", "{CD0A0523-EAB9-48A7-9BA8-42CFA5370821}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nexuscrud.BLL", "..\nexuscrud.BLL\nexuscrud.BLL.csproj", "{CD0A0523-EAB9-48A7-9BA8-42CFA5370821}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nexuscrud.DAL", "..\nexuscrud.DAL\nexuscrud.DAL.csproj", "{43F7673B-7FCB-4B0A-A724-50F0936111A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nexuscrud.DAL", "..\nexuscrud.DAL\nexuscrud.DAL.csproj", "{43F7673B-7FCB-4B0A-A724-50F0936111A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nexuscrud.BLL.Test", "..\nexuscrud.BLL.Test\nexuscrud.BLL.Test.csproj", "{C26D8722-365D-400B-A359-D90E1A748FC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nexuscrud.BLL.Test", "..\nexuscrud.BLL.Test\nexuscrud.BLL.Test.csproj", "{C26D8722-365D-400B-A359-D90E1A748FC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

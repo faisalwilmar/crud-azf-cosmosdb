@@ -1,4 +1,5 @@
-﻿using Nexus.Base.CosmosDBRepository;
+﻿using Microsoft.Azure.Documents.Client;
+using Nexus.Base.CosmosDBRepository;
 using nexuscrud.DAL.Model;
 using System;
 
@@ -13,8 +14,8 @@ namespace nexuscrud.DAL.RepositoryAccess
 
         public class ActivityRepository : DocumentDBRepository<Activity>
         {
-            public ActivityRepository() :
-                base(databaseId: "Course", endPoint: C_CosmosDBEndpoint, key: C_CosmosDBKey, createDatabaseIfNotExist: false,
+            public ActivityRepository(DocumentClient client) :
+                base(databaseId: "Course", client, createDatabaseIfNotExist: false,
                     eventGridEndPoint: C_EventGridEndPoint, eventGridKey: C_EventGridKey)
             { }
         }
