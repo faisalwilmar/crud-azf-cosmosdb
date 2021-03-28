@@ -29,7 +29,7 @@ namespace nexuscrud
         [FunctionName("GetAllActivity")]
         public static async Task<IActionResult> GetAllActivityFunc(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "activity")] HttpRequest req,
-            [CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
+            [SwaggerIgnore][CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
             ILogger log)
         {
             var config = new MapperConfiguration(cfg => {
@@ -72,7 +72,7 @@ namespace nexuscrud
         [FunctionName("GetActivityById")]
         public async Task<IActionResult> GetActivityByIdFunc(
            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "activity/{id}")] ActivityDTO req,
-           [CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
+           [SwaggerIgnore][CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
            ILogger log, string id)
         {
             var config = new MapperConfiguration(cfg => {

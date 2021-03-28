@@ -23,7 +23,7 @@ namespace nexuscrud.ActivityFunc
         [FunctionName("DeleteActivity")]
         public static async Task<IActionResult> DeleteCategory(
             [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "Activity/{id}")] HttpRequest req,
-            [CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
+            [SwaggerIgnore][CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
             ILogger log, string id)
         {
             ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(client));

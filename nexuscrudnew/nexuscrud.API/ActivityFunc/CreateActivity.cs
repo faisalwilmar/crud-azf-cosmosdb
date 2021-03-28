@@ -29,7 +29,7 @@ namespace nexuscrud.ActivityFunc
         public static async Task<IActionResult> CreateActivityFunc(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "activity")]
             [RequestBodyType(typeof(ActivityDTO), "Create Activity request")] ActivityDTO req,
-            [CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
+            [SwaggerIgnore][CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
             ILogger log)
         {
             var act = new Activity()

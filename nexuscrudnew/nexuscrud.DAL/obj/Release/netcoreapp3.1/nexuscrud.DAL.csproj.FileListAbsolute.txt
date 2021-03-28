@@ -1,0 +1,9 @@
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\bin\Release\netcoreapp3.1\nexuscrud.DAL.deps.json
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\bin\Release\netcoreapp3.1\nexuscrud.DAL.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\bin\Release\netcoreapp3.1\nexuscrud.DAL.pdb
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\obj\Release\netcoreapp3.1\nexuscrud.DAL.csprojAssemblyReference.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\obj\Release\netcoreapp3.1\nexuscrud.DAL.AssemblyInfoInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\obj\Release\netcoreapp3.1\nexuscrud.DAL.AssemblyInfo.cs
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\obj\Release\netcoreapp3.1\nexuscrud.DAL.csproj.CoreCompileInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\obj\Release\netcoreapp3.1\nexuscrud.DAL.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexuscrudnew\nexuscrud.DAL\obj\Release\netcoreapp3.1\nexuscrud.DAL.pdb

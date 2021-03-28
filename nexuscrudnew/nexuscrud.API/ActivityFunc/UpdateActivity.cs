@@ -28,7 +28,7 @@ namespace nexuscrud.ActivityFunc
         public static async Task<IActionResult> UpdateActivityFunc(
             [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "Activity/{id}")]
             [RequestBodyType(typeof(ActivityDTO), "Update Activity request")]ActivityDTO req,
-            [CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
+            [SwaggerIgnore][CosmosDB(ConnectionStringSetting = "cosmos-bl-tutorial-serverless")] DocumentClient client,
             ILogger log, string id)
         {
 
