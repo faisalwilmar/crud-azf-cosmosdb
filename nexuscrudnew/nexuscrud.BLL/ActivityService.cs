@@ -1,4 +1,5 @@
 ﻿using Microsoft.Azure.Documents;
+using Newtonsoft.Json.Linq;
 using Nexus.Base.CosmosDBRepository;
 using nexuscrud.DAL.Model;
 using System;
@@ -24,19 +25,25 @@ namespace nexuscrud.BLL
             return await _repository.GetByIdAsync(id);
         }
 
-        public async Task<PageResult<object>> GetAllActivity()
+        public async Task<PageResult<Activity>> GetAllActivity()
         {
-            return await _repository.GetAsync(sqlQuery: "select * from c");
+            return await _repository.GetAsync(predicate: null);
         }
 
-        public async Task<Document> CreateNewActivity(Activity act)
+        public async Task<Activity> CreateNewActivity(Activity act)
         {
-            return await _repository.CreateAsync(act);
+            var returnVal = await _repository.CreateAsync(act);
+            JObject json = JObject.Parse(returnVal.ToString());
+            Activity activ = json.ToObject<Activity>();
+            return activ;
         }
 
-        public async Task<Document> UpdateActivity(string Id, Activity act)
+        public async Task<Activity> UpdateActivity(string Id, Activity act)
         {
-            return await _repository.UpdateAsync(Id, act);
+            var returnVal = await _repository.UpdateAsync(Id, act);
+            JObject json = JObject.Parse(returnVal.ToString());
+            Activity activ = json.ToObject<Activity>();
+            return activ;
         }
 
         public async Task<string> DeleteActivity(string Id)

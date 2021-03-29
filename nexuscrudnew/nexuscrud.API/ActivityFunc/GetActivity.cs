@@ -46,9 +46,7 @@ namespace nexuscrud
 
             foreach (var item in activities.Items)
             {
-                JObject json = JObject.Parse(item.ToString());
-                Activity activ = json.ToObject<Activity>();
-                activityList.Add(mapper.Map<ActivityDTO>(activ));
+                activityList.Add(mapper.Map<ActivityDTO>(item));
             }
 
             var result = new GetAllActivityResponse();

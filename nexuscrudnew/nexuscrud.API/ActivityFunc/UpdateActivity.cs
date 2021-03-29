@@ -32,19 +32,23 @@ namespace nexuscrud.ActivityFunc
             ILogger log, string id)
         {
 
-            var config = new MapperConfiguration(cfg => {
+            var configFromDto = new MapperConfiguration(cfg => {
                 cfg.CreateMap<ActivityDTO, Activity>();
             });
-
-            IMapper mapper = new Mapper(config);
-            var item = mapper.Map<Activity>(req);
-            Document result;
+            IMapper mapperFromDto = new Mapper(configFromDto);
+            
+            var item = mapperFromDto.Map<Activity>(req);
 
             ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(client));
 
-            result = await activityservice.UpdateActivity(id, item);
-            
-            return new OkObjectResult(result);
+            var result = await activityservice.UpdateActivity(id, item);
+
+            var configToDto = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Activity, ActivityDTO>();
+            });
+            IMapper mapperToDto = new Mapper(configToDto);
+
+            return new OkObjectResult(mapperToDto.Map<ActivityDTO>(result));
         }
     }
 }

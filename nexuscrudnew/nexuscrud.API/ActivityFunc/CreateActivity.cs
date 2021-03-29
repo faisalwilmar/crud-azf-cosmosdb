@@ -39,13 +39,18 @@ namespace nexuscrud.ActivityFunc
                 Description = req.Description
             };
 
-            Document result;
+            //Document result;
 
             ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(client));
 
-            result = await activityservice.CreateNewActivity(act);
-            
-            return new OkObjectResult(result);
+            var result = await activityservice.CreateNewActivity(act);
+
+            var configToDto = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Activity, ActivityDTO>();
+            });
+            IMapper mapperToDto = new Mapper(configToDto);
+
+            return new OkObjectResult(mapperToDto.Map<ActivityDTO>(result));
         }
     }
 }
