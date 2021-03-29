@@ -1,0 +1,11 @@
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\bin\Debug\netcoreapp3.1\nexus3crud.DAL.deps.json
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\bin\Debug\netcoreapp3.1\nexus3crud.DAL.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\bin\Debug\netcoreapp3.1\nexus3crud.DAL.pdb
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\obj\Debug\netcoreapp3.1\nexus3crud.DAL.csprojAssemblyReference.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\obj\Debug\netcoreapp3.1\nexus3crud.DAL.AssemblyInfoInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\obj\Debug\netcoreapp3.1\nexus3crud.DAL.AssemblyInfo.cs
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\obj\Debug\netcoreapp3.1\nexus3crud.DAL.csproj.CoreCompileInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\obj\Debug\netcoreapp3.1\nexus3crud.DAL.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\obj\Debug\netcoreapp3.1\nexus3crud.DAL.pdb
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\bin\Debug\netcoreapp3.1\Microsoft.Azure.Documents.ServiceInterop.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.DAL\bin\Debug\netcoreapp3.1\Cosmos.CRTCompat.dll

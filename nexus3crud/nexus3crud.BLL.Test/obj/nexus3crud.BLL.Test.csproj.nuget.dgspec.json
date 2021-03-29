@@ -1,0 +1,220 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL.Test\\nexus3crud.BLL.Test.csproj": {}
+  },
+  "projects": {
+    "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL.Test\\nexus3crud.BLL.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL.Test\\nexus3crud.BLL.Test.csproj",
+        "projectName": "nexus3crud.BLL.Test",
+        "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL.Test\\nexus3crud.BLL.Test.csproj",
+        "packagesPath": "C:\\Users\\faisalwilmar\\.nuget\\packages\\",
+        "outputPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faisalwilmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://ecomindo.pkgs.visualstudio.com/Nexus/_packaging/Nexus.Base/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL\\nexus3crud.BLL.csproj": {
+                "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL\\nexus3crud.BLL.csproj"
+              },
+              "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj": {
+                "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL\\nexus3crud.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL\\nexus3crud.BLL.csproj",
+        "projectName": "nexus3crud.BLL",
+        "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL\\nexus3crud.BLL.csproj",
+        "packagesPath": "C:\\Users\\faisalwilmar\\.nuget\\packages\\",
+        "outputPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faisalwilmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://ecomindo.pkgs.visualstudio.com/Nexus/_packaging/Nexus.Base/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj": {
+                "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj",
+        "projectName": "nexus3crud.DAL",
+        "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj",
+        "packagesPath": "C:\\Users\\faisalwilmar\\.nuget\\packages\\",
+        "outputPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faisalwilmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://ecomindo.pkgs.visualstudio.com/Nexus/_packaging/Nexus.Base/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Azure.DocumentDB.Core": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            },
+            "Nexus.Base.CosmosDBRepository": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\bin\Debug\netcoreapp3.1\nexus3crud.BLL.Test.deps.json
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\bin\Debug\netcoreapp3.1\nexus3crud.BLL.Test.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\bin\Debug\netcoreapp3.1\nexus3crud.BLL.Test.pdb
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.csprojAssemblyReference.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.AssemblyInfoInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.AssemblyInfo.cs
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.csproj.CoreCompileInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.pdb

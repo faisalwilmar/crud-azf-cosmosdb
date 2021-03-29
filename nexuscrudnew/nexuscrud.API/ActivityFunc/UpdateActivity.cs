@@ -20,7 +20,7 @@ namespace nexuscrud.ActivityFunc
 {
     public static class UpdateActivity
     {
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Document))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ActivityDTO))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.NotFound, Type = typeof(string))]
         [RequestHttpHeader("Authorization", isRequired: true)]

@@ -21,7 +21,7 @@ namespace nexuscrud.ActivityFunc
 {
     public static class CreateActivity
     {
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Document))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ActivityDTO))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.NotFound, Type = typeof(string))]
         [RequestHttpHeader("Authorization", isRequired: true)]
@@ -38,8 +38,6 @@ namespace nexuscrud.ActivityFunc
                 ActivityName = req.ActivityName,
                 Description = req.Description
             };
-
-            //Document result;
 
             ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(client));
 
