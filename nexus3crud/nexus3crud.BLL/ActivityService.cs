@@ -35,10 +35,7 @@ namespace nexus3crud.BLL
 
         public async Task<Activity> UpdateActivity(string Id, Activity act)
         {
-            var current = await _repository.GetByIdAsync(Id);
-            current.ActivityName = act.ActivityName;
-            current.Description = act.Description;
-            return await _repository.UpdateAsync(Id, current);
+            return await _repository.UpdateAsync(Id, act);
         }
 
         public async Task<string> DeleteActivity(string Id)

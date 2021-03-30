@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XCqL06KimESrPFHW13fiGdkbIhaYhWun0Y7M8tltI0ugq43zvkTlmWYMd+t82iOmg+oLxp+7Eg2z2H1w6nUiMw==",
+  "dgSpecHash": "dG4Yovwwo3swe0sL+rUYhMzwyjqEGsElJxnHJOOx9DFaRCLs9p5ELE9TuktS5eMRqQ0mRtSyKP01KmH0FPLd4g==",
   "success": true,
   "projectFilePath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.DAL\\nexus3crud.DAL.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,7 @@
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
-    "C:\\Users\\faisalwilmar\\.nuget\\packages\\nexus.base.cosmosdbrepository\\3.0.1\\nexus.base.cosmosdbrepository.3.0.1.nupkg.sha512",
+    "C:\\Users\\faisalwilmar\\.nuget\\packages\\nexus.base.cosmosdbrepository\\3.1.1\\nexus.base.cosmosdbrepository.3.1.1.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\nexus.base.eventgridextensions\\2020.1.27.6\\nexus.base.eventgridextensions.2020.1.27.6.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\pipelines.sockets.unofficial\\2.1.16\\pipelines.sockets.unofficial.2.1.16.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

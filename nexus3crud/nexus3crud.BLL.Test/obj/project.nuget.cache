@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DYeLRRHDbBXEr6Krhi1B9C+YABYaBYMKh7juPuSkk09SisQuJPAlGkgNCQ4rLeG5ol5OnjrO4APwB1HScv39kg==",
+  "dgSpecHash": "AIkEGZQBxalxQqCEZ+fqC5+wnuj7h4eLmlcdQUzoLSht4T1LrqFiUhkkkLFpvQd+CseYwmjngvjkX6b3w/fb9A==",
   "success": true,
   "projectFilePath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.BLL.Test\\nexus3crud.BLL.Test.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,7 @@
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\moq\\4.16.1\\moq.4.16.1.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
-    "C:\\Users\\faisalwilmar\\.nuget\\packages\\nexus.base.cosmosdbrepository\\3.0.1\\nexus.base.cosmosdbrepository.3.0.1.nupkg.sha512",
+    "C:\\Users\\faisalwilmar\\.nuget\\packages\\nexus.base.cosmosdbrepository\\3.1.1\\nexus.base.cosmosdbrepository.3.1.1.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\nexus.base.eventgridextensions\\2020.1.27.6\\nexus.base.eventgridextensions.2020.1.27.6.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\faisalwilmar\\.nuget\\packages\\pipelines.sockets.unofficial\\2.1.16\\pipelines.sockets.unofficial.2.1.16.nupkg.sha512",
