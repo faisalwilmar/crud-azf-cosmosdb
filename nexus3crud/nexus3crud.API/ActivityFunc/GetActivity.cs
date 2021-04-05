@@ -36,12 +36,16 @@ namespace nexus3crud.API.ActivityFunc
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "activity")] HttpRequest req,
             ILogger log)
         {
+            // TODO: coba baca2 apakah best practice pemakaian mapper seperti ini?
+            //       krn setiap kali pemanggilan function, mapper akan terbentuk.
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<Activity, ActivityDTO>();
             });
 
             IMapper mapper = new Mapper(config);
 
+            // TODO: coba baca2 apakah best practice pemakaian object seperti ini?
+            //       krn setiap kali pemanggilan function, object akan terbentuk.
             ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient));
 
             var activities = await activityservice.GetAllActivity();

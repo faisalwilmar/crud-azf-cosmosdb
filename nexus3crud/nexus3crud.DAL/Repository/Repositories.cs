@@ -13,6 +13,9 @@ namespace nexus3crud.DAL.Repository
         private static readonly string C_CosmosDBKey = Environment.GetEnvironmentVariable("CosmosDBKey");
         private static readonly string C_EventGridEndPoint = Environment.GetEnvironmentVariable("EventGridEndPoint");
         private static readonly string C_EventGridKey = Environment.GetEnvironmentVariable("EventGridEndKey");
+
+        // TODO: krn ada limitasi container dlm cosmos DB, jd nggak semua container bs d tampung dalam satu DB.
+        //       baiknya nama db jgn d jadikan constant
         private static readonly string C_DB = "Course";
 
         public class ActivityRepository : DocumentDBRepository<Activity>
