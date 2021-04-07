@@ -17,7 +17,7 @@ namespace nexus3crud.BLL
                 MessageBody = messageBody,
                 UtcTime = DateTime.UtcNow
             };
-            using (var reps = new Repositories.NotificationActivityRepository())
+            using (var reps = new Repositories.NotificationActivityRepository("Course"))
             {
                 await reps.CreateAsync(actNot);
             }

@@ -17,10 +17,13 @@ namespace nexus3crud.API.ActivityFunc
     public class UpdateActivity
     {
         private readonly CosmosClient _cosmosClient;
+        private readonly ActivityService activityservice;
 
         public UpdateActivity(CosmosClient client)
         {
             _cosmosClient = client;
+
+            activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient, "Course"));
         }
 
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ActivityDTO))]
@@ -40,8 +43,6 @@ namespace nexus3crud.API.ActivityFunc
             IMapper mapperFromDto = new Mapper(configFromDto);
 
             var item = mapperFromDto.Map<Activity>(req);
-
-            ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient));
 
             var result = await activityservice.UpdateActivity(id, item);
 

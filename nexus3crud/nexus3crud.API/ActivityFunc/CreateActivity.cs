@@ -18,10 +18,13 @@ namespace nexus3crud.API.ActivityFunc
     public class CreateActivity
     {
         private readonly CosmosClient _cosmosClient;
+        private readonly ActivityService activityservice;
 
         public CreateActivity(CosmosClient client)
         {
             _cosmosClient = client;
+
+            activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient, "Course"));
         }
 
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ActivityDTO))]
@@ -40,8 +43,6 @@ namespace nexus3crud.API.ActivityFunc
                 ActivityName = req.ActivityName,
                 Description = req.Description
             };
-
-            ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient));
 
             var result = await activityservice.CreateNewActivity(act);
 

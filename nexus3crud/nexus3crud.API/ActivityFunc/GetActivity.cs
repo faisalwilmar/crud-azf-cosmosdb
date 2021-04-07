@@ -20,10 +20,23 @@ namespace nexus3crud.API.ActivityFunc
     public class GetActivity
     {
         private readonly CosmosClient _cosmosClient;
+        private readonly ActivityService activityservice;
+        private IMapper mapper { get; set; }
 
         public GetActivity(CosmosClient client)
         {
             _cosmosClient = client;
+
+            activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient, "Course"));
+
+            if (mapper == null)
+            {
+                var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<Activity, ActivityDTO>();
+                    cfg.CreateMap<ActivityDTO, Activity>();
+                });
+                mapper = config.CreateMapper();
+            }
         }
 
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ActivityListDTO))]
@@ -36,18 +49,6 @@ namespace nexus3crud.API.ActivityFunc
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "activity")] HttpRequest req,
             ILogger log)
         {
-            // TODO: coba baca2 apakah best practice pemakaian mapper seperti ini?
-            //       krn setiap kali pemanggilan function, mapper akan terbentuk.
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<Activity, ActivityDTO>();
-            });
-
-            IMapper mapper = new Mapper(config);
-
-            // TODO: coba baca2 apakah best practice pemakaian object seperti ini?
-            //       krn setiap kali pemanggilan function, object akan terbentuk.
-            ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient));
-
             var activities = await activityservice.GetAllActivity();
 
             var activityList = new List<ActivityDTO>();
@@ -74,14 +75,6 @@ namespace nexus3crud.API.ActivityFunc
            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "activity/{id}")] ActivityDTO req,
            ILogger log, string id)
         {
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<Activity, ActivityDTO>();
-            });
-
-            IMapper mapper = new Mapper(config);
-
-            ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient));
-
             var activityInfo = await activityservice.GetActivityById(id);
 
             var result = new ActivityDTO();

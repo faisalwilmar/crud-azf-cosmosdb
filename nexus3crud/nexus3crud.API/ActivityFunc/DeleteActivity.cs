@@ -16,10 +16,13 @@ namespace nexus3crud.API.ActivityFunc
     public class DeleteActivity
     {
         private readonly CosmosClient _cosmosClient;
+        private readonly ActivityService activityservice;
 
         public DeleteActivity(CosmosClient client)
         {
             _cosmosClient = client;
+
+            activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient, "Course"));
         }
 
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(string))]
@@ -31,8 +34,6 @@ namespace nexus3crud.API.ActivityFunc
                 [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "Activity/{id}")] HttpRequest req,
                 ILogger log, string id)
         {
-            ActivityService activityservice = new ActivityService(new Repositories.ActivityRepository(_cosmosClient));
-
             var result = await activityservice.DeleteActivity(id);
 
             if (result.Contains("Activity Not Found"))
