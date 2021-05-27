@@ -138,3 +138,4 @@ E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\bin\Deb
 E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\bin\Debug\netcoreapp3.1\nexus3crud.DAL.pdb
 E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.csproj.CopyComplete
 E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\obj\Debug\netcoreapp3.1\nexus3crud.BLL.Test.genruntimeconfig.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.BLL.Test\bin\Debug\netcoreapp3.1\AutoMapper.dll

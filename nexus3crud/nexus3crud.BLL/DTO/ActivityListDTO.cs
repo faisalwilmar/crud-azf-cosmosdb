@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace nexus3crud.API.DTO
+namespace nexus3crud.BLL.DTO
 {
     public class ActivityListDTO
     {

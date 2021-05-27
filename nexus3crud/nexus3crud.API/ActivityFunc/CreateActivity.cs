@@ -8,7 +8,6 @@ using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
-using nexus3crud.API.DTO;
 using nexus3crud.BLL;
 using nexus3crud.DAL.Model;
 using nexus3crud.DAL.Repository;

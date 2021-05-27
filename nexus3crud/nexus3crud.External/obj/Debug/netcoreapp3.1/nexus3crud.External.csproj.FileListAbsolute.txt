@@ -1,0 +1,9 @@
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\bin\Debug\netcoreapp3.1\nexus3crud.External.deps.json
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\bin\Debug\netcoreapp3.1\nexus3crud.External.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\bin\Debug\netcoreapp3.1\nexus3crud.External.pdb
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\obj\Debug\netcoreapp3.1\nexus3crud.External.csprojAssemblyReference.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\obj\Debug\netcoreapp3.1\nexus3crud.External.AssemblyInfoInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\obj\Debug\netcoreapp3.1\nexus3crud.External.AssemblyInfo.cs
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\obj\Debug\netcoreapp3.1\nexus3crud.External.csproj.CoreCompileInputs.cache
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\obj\Debug\netcoreapp3.1\nexus3crud.External.dll
+E:\Beelingua Enablement\crud-azf-cosmosdb\nexus3crud\nexus3crud.External\obj\Debug\netcoreapp3.1\nexus3crud.External.pdb

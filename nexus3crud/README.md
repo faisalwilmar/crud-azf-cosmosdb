@@ -3,6 +3,8 @@
 This is .NET Core Azure Function with Domain-Driven Structure for CosmosDB CRUD using Nexus3 library and Automapper.
 Also sending (and receiving) notification using Azure Event Grid and Event Hubs.
 
+UPDATE : Architecture changed to Hexagonal Architecture, and using UnitOfWork instead of Repository for BLL to access Database. This method can improve overall performance and reduce the number of instance needed for running the application.
+
 This project already using DDD (Domain-driven Design), Swashbuckle Swagger UI API Documentation, and XUnit for unit test.
 
 ## Installation

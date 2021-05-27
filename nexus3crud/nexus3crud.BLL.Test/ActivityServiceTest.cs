@@ -2,7 +2,9 @@
 using Moq;
 using Newtonsoft.Json;
 using Nexus.Base.CosmosDBRepository;
+using nexus3crud.BLL.DTO;
 using nexus3crud.DAL.Model;
+using nexus3crud.DAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,52 +15,30 @@ using Xunit;
 
 namespace nexus3crud.BLL.Test
 {
-    public class ActivityServiceTest
+    public static class ActivityServiceTest
     {
-        public class GetActivityById
-        {
-            readonly static IEnumerable<Activity> activities = new List<Activity>
+        public static IEnumerable<Activity> activities = new List<Activity>
             {
                 {new Activity() { Id = "354806d7-a5b7-451c-8a16-3212c4c03a95", ActivityName = "Activity to String", Description = "Description of Activity for delete"} },
                 {new Activity() { Id = "cf2f68d1-361f-4b3e-944b-d0d5806af395", ActivityName = "Activity to String to del", Description = "Description of Activity for delete"} },
                 {new Activity() { Id = "22a7f1e3-6783-47ea-b499-43eeb8569a32", ActivityName = "Activity to String to del XXX", Description = "Description of Activity for delete"} }
             };
 
-            [Theory]
-            [InlineData("354806d7-a5b7-451c-8a16-3212c4c03a95")]
-            [InlineData("354806d7-a5b7-451c-8a16-3212c4c03xxx")]
-            public async Task GetActivityById_Success(string id)
-            {
-                // arrange
-                var repo = new Mock<IDocumentDBRepository<Activity>>();
+        private static Mock<IUnitOfWork> uow = new Mock<IUnitOfWork>();
 
-                var output = activities.Where(o => o.Id == id).FirstOrDefault();
+        static ActivityServiceTest()
+        {
+            Initiator(uow);
+        }
 
-                repo.Setup(c => c.GetByIdAsync(
+        public static void Initiator(Mock<IUnitOfWork> uow)
+        {
+            uow.Setup(c => c.ActivityRepository.GetByIdAsync(
                     It.IsAny<string>(),
                     It.IsAny<Dictionary<string, string>>()
-                )).Returns(
-                    Task.FromResult<Activity>(output)
-                );
-
-                var svc = new ActivityService(repo.Object);
-
-                // act
-                var act = await svc.GetActivityById(id);
-
-                // assert
-                Assert.Equal(output, act);
-            }
-
-            [Fact]
-            public async Task GetAllActivity_Success()
-            {
-                // arrange
-                var repo = new Mock<IDocumentDBRepository<Activity>>();
-
-                var output = new PageResult<Activity>(activities, "");
-
-                repo.Setup(c => c.GetAsync(
+                )).ReturnsAsync((string id, Dictionary<string, string> dict) => activities.Where(o => o.Id == id).FirstOrDefault());
+            
+            uow.Setup(c => c.ActivityRepository.GetAsync(
                     It.IsAny<Expression<Func<Activity, bool>>>(),
                     It.IsAny<Func<IQueryable<Activity>, IOrderedQueryable<Activity>>>(),
                     It.IsAny<Expression<Func<Activity, Activity>>>(),
@@ -66,15 +46,84 @@ namespace nexus3crud.BLL.Test
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<Dictionary<string, string>>()
-                )).Returns(Task.FromResult(output));
+                )).ReturnsAsync((
+                Expression<Func<Activity, bool>> predicate,
+                Func<IQueryable<Activity>, IOrderedQueryable<Activity>> orderBy,
+                Expression<Func<Activity, Activity>> selector,
+                bool usePaging, string continuationToken, int pageSize, Dictionary<string, string> pk
+            ) => 
+                new PageResult<Activity>(predicate != null ? activities.Where(predicate?.Compile()) : activities, ""));
 
-                var svc = new ActivityService(repo.Object);
+            uow.Setup(c => c.ActivityRepository.CreateAsync(
+                It.IsAny<Activity>(),
+                It.IsAny<EventGridOptions>(),
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).ReturnsAsync((Activity p, EventGridOptions evg, string str1, string str2) => p);
+
+            uow.Setup(c => c.ActivityRepository.UpdateAsync(
+                It.IsAny<string>(),
+                It.IsAny<Activity>(),
+                It.IsAny<EventGridOptions>(),
+                It.IsAny<string>()
+            )).ReturnsAsync((string id, Activity p, EventGridOptions evg, string str2) => p);
+
+            //uow.Setup(c => c.ActivityRepository.DeleteAsync(
+            //    It.IsAny<string>(),
+            //    It.IsAny<Dictionary<string, string>>(),
+            //    It.IsAny<EventGridOptions>()
+            //)).Callback((string id, Dictionary<string, string> p, EventGridOptions evg) =>
+            //{
+            //    activities = activities.Where(p => p.Id != id).ToList();
+            //}); kalo ini di delete beneran, cara cek nya diitung isi itemnya
+
+            uow.Setup(c => c.ActivityRepository.DeleteAsync(
+                   It.IsAny<string>(),
+                   It.IsAny<Dictionary<string, string>>(),
+                   It.IsAny<EventGridOptions>()
+               ));
+
+        }
+
+        public class GetActivityById
+        {
+            [Theory]
+            [InlineData("354806d7-a5b7-451c-8a16-3212c4c03a95")]
+            [InlineData("22a7f1e3-6783-47ea-b499-43eeb8569a32")]
+            public async Task GetActivityById_Success(string id)
+            {
+                // arrange
+                var svc = new ActivityService(uow.Object);
+
+                var output = activities.Where(o => o.Id == id).FirstOrDefault();
+
+                var desiredOutput = new ActivityDTO()
+                {
+                    Id = output.Id,
+                    ActivityName = output.ActivityName,
+                    Description = output.Description
+                };
+
+                // act
+                var act = await svc.GetActivityById(id);
+
+                // assert
+                Assert.Equal(desiredOutput.ActivityName, act.ActivityName);
+                Assert.Equal(desiredOutput.Description, act.Description);
+                Assert.IsType<ActivityDTO>(act);
+            }
+
+            [Fact]
+            public async Task GetAllActivity_Success()
+            {
+                // arrange
+                var svc = new ActivityService(uow.Object);
 
                 // act
                 var act = await svc.GetAllActivity();
 
                 // assert
-                Assert.Equal(output, act);
+                Assert.IsType<ActivityListDTO>(act);
             }
         }
 
@@ -95,16 +144,7 @@ namespace nexus3crud.BLL.Test
                     Description = "Activity Description"
                 };
 
-                repo.Setup(c => c.CreateAsync(
-                    It.IsAny<Activity>(),
-                    It.IsAny<EventGridOptions>(),
-                    It.IsAny<string>(),
-                    It.IsAny<string>()
-                )).Returns(
-                    Task.FromResult<Activity>(activityNew)
-                );
-
-                var svc = new ActivityService(repo.Object);
+                var svc = new ActivityService(uow.Object);
 
                 // act
                 var act = await svc.CreateNewActivity(activityNew);
@@ -113,18 +153,12 @@ namespace nexus3crud.BLL.Test
                 Assert.Equal(activityNew.Id, act.Id);
                 Assert.Equal(activityNew.ActivityName, act.ActivityName);
                 Assert.Equal(activityNew.Description, act.Description);
+                Assert.IsType<ActivityDTO>(act);
             }
         }
 
         public class UpdateActivity
         {
-            readonly static IEnumerable<Activity> activities = new List<Activity>
-            {
-                {new Activity() { Id = "354806d7-a5b7-451c-8a16-3212c4c03a95", ActivityName = "Activity to String", Description = "Description of Activity for delete"} },
-                {new Activity() { Id = "cf2f68d1-361f-4b3e-944b-d0d5806af395", ActivityName = "Activity to String to del", Description = "Description of Activity for delete"} },
-                {new Activity() { Id = "22a7f1e3-6783-47ea-b499-43eeb8569a32", ActivityName = "Activity to String to del XXX", Description = "Description of Activity for delete"} }
-            };
-
             [Fact]
             public async Task UpdateActivity_Success()
             {
@@ -133,46 +167,23 @@ namespace nexus3crud.BLL.Test
 
                 var GeneratedId = "354806d7-a5b7-451c-8a16-3212c4c03a95";
 
-                var output = activities.Where(o => o.Id == GeneratedId).FirstOrDefault();
-
-                repo.Setup(c => c.GetByIdAsync(
-                    It.IsAny<string>(),
-                    It.IsAny<Dictionary<string, string>>()
-                )).Returns(
-                    Task.FromResult<Activity>(output)
-                );
-
-                var activityNew = new Activity()
-                {
-                    ActivityName = "The New Activity",
-                    Description = "Activity Description"
-                };
-
-                var activityUpdated = new Activity()
+                var activityNew = new ActivityDTO()
                 {
                     Id = GeneratedId,
                     ActivityName = "The New Activity",
                     Description = "Activity Description"
                 };
 
-                repo.Setup(c => c.UpdateAsync(
-                    It.IsAny<string>(),
-                    It.IsAny<Activity>(),
-                    It.IsAny<EventGridOptions>(),
-                    It.IsAny<string>()
-                )).Returns(
-                    Task.FromResult<Activity>(activityUpdated)
-                );
-
-                var svc = new ActivityService(repo.Object);
+                var svc = new ActivityService(uow.Object);
 
                 // act
                 var act = await svc.UpdateActivity(GeneratedId, activityNew);
 
                 // assert
-                Assert.Equal(activityUpdated.Id, act.Id);
-                Assert.Equal(activityUpdated.ActivityName, act.ActivityName);
-                Assert.Equal(activityUpdated.Description, act.Description);
+                Assert.Equal(GeneratedId, act.Id);
+                Assert.Equal(activityNew.ActivityName, act.ActivityName);
+                Assert.Equal(activityNew.Description, act.Description);
+                Assert.IsType<ActivityDTO>(act);
             }
         }
 
@@ -186,13 +197,7 @@ namespace nexus3crud.BLL.Test
 
                 var GeneratedId = Guid.NewGuid().ToString();
 
-                repo.Setup(c => c.DeleteAsync(
-                    It.IsAny<string>(),
-                    It.IsAny<Dictionary<string, string>>(),
-                    It.IsAny<EventGridOptions>()
-                ));
-
-                var svc = new ActivityService(repo.Object);
+                var svc = new ActivityService(uow.Object);
 
                 // act
                 var act = await svc.DeleteActivity(GeneratedId);

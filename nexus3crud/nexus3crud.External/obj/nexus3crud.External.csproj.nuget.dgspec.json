@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.External\\nexus3crud.External.csproj": {}
+  },
+  "projects": {
+    "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.External\\nexus3crud.External.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.External\\nexus3crud.External.csproj",
+        "projectName": "nexus3crud.External",
+        "projectPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.External\\nexus3crud.External.csproj",
+        "packagesPath": "C:\\Users\\faisalwilmar\\.nuget\\packages\\",
+        "outputPath": "E:\\Beelingua Enablement\\crud-azf-cosmosdb\\nexus3crud\\nexus3crud.External\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faisalwilmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://ecomindo.pkgs.visualstudio.com/Nexus/_packaging/Nexus.Base/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

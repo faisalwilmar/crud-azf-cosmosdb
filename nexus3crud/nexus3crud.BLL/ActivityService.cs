@@ -1,48 +1,74 @@
-﻿using Nexus.Base.CosmosDBRepository;
+﻿using AutoMapper;
+using Nexus.Base.CosmosDBRepository;
+using nexus3crud.BLL.DTO;
 using nexus3crud.DAL.Model;
-using System;
+using nexus3crud.DAL.Repository;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace nexus3crud.BLL
 {
     public class ActivityService
     {
-        private readonly IDocumentDBRepository<Activity> _repository;
+        //private readonly IDocumentDBRepository<Activity> _repository;
 
-        public ActivityService(IDocumentDBRepository<Activity> repository)
+        private readonly IUnitOfWork uow;
+        private readonly IMapper _mapper;
+
+        public ActivityService(IUnitOfWork uow)
         {
-            if (this._repository == null)
+            this.uow ??= uow;
+            if(_mapper == null)
             {
-                this._repository = repository;
+                var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<Activity, ActivityDTO>();
+                    cfg.CreateMap<ActivityDTO, Activity>();
+                });
+
+                _mapper = config.CreateMapper();
             }
         }
 
-        public async Task<Activity> GetActivityById(string id)
+        public async Task<ActivityDTO> GetActivityById(string id)
         {
-            return await _repository.GetByIdAsync(id);
+            return _mapper.Map<ActivityDTO>(await uow.ActivityRepository.GetByIdAsync(id));
         }
 
-        public async Task<PageResult<Activity>> GetAllActivity()
+        public async Task<ActivityListDTO> GetAllActivity()
         {
-            return await _repository.GetAsync();
-        }
-
-        public async Task<Activity> CreateNewActivity(Activity act)
-        {
-            return await _repository.CreateAsync(act);
+            var activities = await uow.ActivityRepository.GetAsync(p => true);
             
+            var activityList = new List<ActivityDTO>();
+
+            foreach (var item in activities.Items)
+            {
+                activityList.Add(_mapper.Map<ActivityDTO>(item));
+            }
+
+            var result = new ActivityListDTO();
+            result.ContinuationToken = activities.ContinuationToken;
+            result.Items = activityList;
+
+            return result;
         }
 
-        public async Task<Activity> UpdateActivity(string Id, Activity act)
+        public async Task<ActivityDTO> CreateNewActivity(Activity act)
         {
-            return await _repository.UpdateAsync(Id, act);
+            return _mapper.Map<ActivityDTO>(await uow.ActivityRepository.CreateAsync(act));
+        }
+
+        public async Task<ActivityDTO> UpdateActivity(string Id, ActivityDTO act)
+        {
+            var activity = _mapper.Map<Activity>(act);
+            var ret = await uow.ActivityRepository.UpdateAsync(Id, activity);
+            return _mapper.Map<ActivityDTO>(ret);
         }
 
         public async Task<string> DeleteActivity(string Id)
         {
             try
             {
-                await _repository.DeleteAsync(Id);
+                await uow.ActivityRepository.DeleteAsync(Id);
                 return "Activity Deleted";
             }
             catch
